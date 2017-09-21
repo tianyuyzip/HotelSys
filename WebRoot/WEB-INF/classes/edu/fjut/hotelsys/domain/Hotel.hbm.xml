@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="edu.fjut.hotelsys.domain">
+
+   <class name="Hotel" table="tbl_hotel">
+      
+      <id name="hotelNo" type="java.lang.Integer" column="hotel_no">
+         <generator class="increment"></generator> <!-- 主键生成策略 -->
+      </id>
+      
+      <property name="hotelName" type="java.lang.String" length="30" column="hotel_name" not-null="true"></property>
+      <property name="hotelAddr" type="java.lang.String" column="hotel_addr" length="100" not-null="true"></property>
+      <property name="hotelPhone" type="string" column="hotel_phone" length="20" not-null="true"></property>
+      <property name="hotelPic" type="binary" column="hotel_pic"></property>
+      <property name="hotelRoomCnt" type="int" column="hotel_room_cnt" not-null="true"></property>
+      
+   </class>
+
+</hibernate-mapping>

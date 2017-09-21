@@ -1,0 +1,34 @@
+一个酒店有很多家分店，我们需要记录分店的信息，分店信息如下：  
+  1. 分店编号  hotel_no
+  2. 分店名称  hotel_name
+  3. 分店地址  hotel_addr
+  4. 分店电话  hotel_phone
+  5. 分店照片  hotel_pic
+  
+  
+2. 实体关系
+   
+   a. 一对多关系 (绝对主流）
+   
+            在关系型数据中，实体之间的关系是通过外键来实现的。
+            
+     citizen
+     citizen_no  citizen_name
+     c001        mary
+     c002        david
+     
+     buscard      
+     card_no     card_isuue_date  card_owner
+     d001        20170401         c001
+     d002        20170402         c001
+     d003        20170402         c002
+     
+           谁来维护关系？？
+            弱势来维持关系，一般是多方是弱势方
+            
+           明星和粉丝
+   
+   
+   b. 一对一关系
+   c. 多对多关系
+   

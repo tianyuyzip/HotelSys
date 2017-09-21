@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.action.extension" value="do"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/> 
+    <constant name="struts.ui.theme" value="simple"></constant>
+    <constant name="struts.objectFactory" value="spring" />
+    <constant name="struts.objectFactory.spring.autoWire" value="name" />
+
+    <package name="base-package" abstract="true" extends="struts-default">
+    
+    </package>
+    
+    <package name="hotel-package" namespace="/hotel" extends="base-package">
+    
+        <action name="*" class="hotelAction" method="{1}">
+           <result name="input_hotel_page">../jsps/hotel/input_hotel.jsp</result>
+           <result name="load_hotel_action" type="redirectAction">loadHotels</result>
+           <result name="list_hotel_page">../jsps/hotel/list_hotel.jsp</result>
+           <result name="update_hotel_page">../jsps/hotel/update_hotel.jsp</result>
+        </action>
+        
+    </package>  
+    
+    <package name="room-package" namespace="/room" extends="base-package"> 
+    
+        <action name="*" class="roomAction" method="{1}">
+           <result name="input_page">../jsps/room/input_room.jsp</result>
+           <result name="load_rooms_action" type="redirectAction">loadRooms</result>
+           <result name="list_room_page">../jsps/room/list_room.jsp</result>
+           <result name="update_room_page">../jsps/room/update_room.jsp</result>
+        </action>                                      
+    
+    </package> 
+    
+    <package name="security-package" namespace="/security" extends="base-package"> 
+    
+        <action name="*" class="securityAction" method="{1}">
+           <result name="login_page">../jsps/login.jsp</result>
+           <result name="main_action" type="redirectAction">main</result>
+           <result name="main_page">../jsps/main.jsp</result>
+        </action>                                      
+    
+    </package>    
+    
+
+</struts>
+
+ 
